@@ -89,6 +89,13 @@ class SinglyLinkedList<E> {
         return (int) head.element;
     }
 
+    public int getLast(){
+        Node last = head;
+        while (last.next != null)
+            last = last.next;
+        return (int) last.element;
+    }
+
 
     public void clear(){
 
