@@ -23,14 +23,18 @@ public class Main {
         data.add(5);
         data.add(6);
         list.addAll(data);
-        list.removeFirst();
-        list.removeFirst();
-        list.removeFirst();
-//        list.clear();
-        int num = list.getFirst();
+        list.addLast(96);
+//      list.removeFirst();
+//      list.removeFirst();
+//      list.removeFirst();
+        list.removeLast();
+//      list.clear();
+        int Firstnum = list.getFirst();
+        int Lastnum = list.getLast();
         System.out.println("\nCreated Linked list is: ");
         System.out.println("\nSize:" + list.getSize());
         list.printList();
-        System.out.println("\nnum: "+num);
+        System.out.println("\nFnum: "+ Firstnum);
+        System.out.println("\nLnum: "+ Lastnum);
     }
 }
