@@ -22,6 +22,21 @@ class SinglyLinkedList<E> {
         return size;
     }
 
+    public int indexOf(Object obj) {
+        int index = 0;
+        Node<E> current = head;
+
+        while (current != null) {
+            if (current.equals(obj)) {
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+
+        return -1;
+    }
+
     public void addFirst(E new_data) {
 
         Node<E> new_node = new Node<E>(new_data);
@@ -101,13 +116,33 @@ class SinglyLinkedList<E> {
         }
     }
 
-    public int getFirst() {
+    public E getFirst() {
         return (int) head.element;
     }
 
-    public int getLast() {
+    public E getLast() {
 
         return (int) tail.element;
+    }
+
+    public Object get(int index)
+    {
+        // index must be 1 or higher
+        if (index < 0)
+            return null;
+        Node<E> current = null;
+        if (head != null) {
+            current = head.getNext();
+            for (int i = 0; i < index; i++) {
+                if (current.getNext() == null)
+                    return null;
+
+                current = current.getNext();
+            }
+            return current.getElement();
+        }
+        return current;
+
     }
 
 
