@@ -15,6 +15,7 @@ public class Main {
         list.addLast(4);
 
         list.insertAfter(list.head.next, 8);
+	list.insertAfter(list.head.next.next.next.next, 100);
 
         data.add(1);
         data.add(2);
@@ -27,8 +28,9 @@ public class Main {
 //      list.removeFirst();
 //      list.removeFirst();
 //      list.removeFirst();
-        list.removeLast();
+//      list.removeLast();
 //      list.clear();
+	int index = list.get(3);
         int Firstnum = list.getFirst();
         int Lastnum = list.getLast();
         System.out.println("\nCreated Linked list is: ");
@@ -36,5 +38,6 @@ public class Main {
         list.printList();
         System.out.println("\nFnum: "+ Firstnum);
         System.out.println("\nLnum: "+ Lastnum);
+	System.out.println("\nIndex: "+ index);
     }
 }
