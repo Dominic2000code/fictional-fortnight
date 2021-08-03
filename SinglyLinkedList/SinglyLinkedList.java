@@ -14,6 +14,13 @@ class SinglyLinkedList<E> {
             next = null;
         }
 
+        public Object getElement(){
+            return element;
+        }
+
+        public Node<E> getNext() {
+            return next;
+        }
 
     }
 
