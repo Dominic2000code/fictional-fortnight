@@ -22,12 +22,12 @@ class SinglyLinkedList<E> {
         return size;
     }
 
-    public int indexOf(Object obj) {
+    public int indexOf(E n) {
         int index = 0;
         Node<E> current = head;
 
         while (current != null) {
-            if (current.equals(obj)) {
+            if (current.element == n) {
                 return index;
             }
             index++;
