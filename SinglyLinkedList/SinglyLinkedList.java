@@ -132,24 +132,23 @@ class SinglyLinkedList<E> {
         return (int) tail.element;
     }
 
-    public Object get(int index)
+    public E get(int index)
+    // returns the element at the specified position in this list.
     {
         // index must be 1 or higher
         if (index < 0)
             return null;
-        Node<E> current = null;
+        Node<E> current = head;
         if (head != null) {
-            current = head.getNext();
             for (int i = 0; i < index; i++) {
-                if (current.getNext() == null)
+                if (current.next == null)
                     return null;
 
-                current = current.getNext();
+                current = current.next;
             }
-            return current.getElement();
+            return current.element;
         }
-        return current;
-
+        return null;
     }
 
 
