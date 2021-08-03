@@ -16,6 +16,7 @@ public class Main {
 
         list.insertAfter(list.head.next, 8);
 	list.insertAfter(list.head.next.next.next.next, 100);
+	SinglyLinkedList.Node<Integer> n1 = new SinglyLinkedList.Node<>(200);
 
         data.add(1);
         data.add(2);
@@ -25,6 +26,7 @@ public class Main {
         data.add(6);
         list.addAll(data);
         list.addLast(96);
+	list.addLast(n1.element);
 //      list.removeFirst();
 //      list.removeFirst();
 //      list.removeFirst();
