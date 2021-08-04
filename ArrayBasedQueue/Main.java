@@ -15,6 +15,8 @@ public class Main {
         }
         print("Order of addition "+Arrays.toString(added_elements));
         print(queue);
+	print("Head: " +queue.getFirst());
+        print("Tail: " +queue.getLast());
 
         // repetitive removal
         int[] removed = new int[queue.getSize()];

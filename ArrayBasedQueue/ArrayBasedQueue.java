@@ -14,6 +14,14 @@ public class ArrayBasedQueue<E> implements Queue<E> {
         this.queue = (E[]) new Object[queue_size];
     }
 
+    public E getFirst(){
+        return queue[0];
+    }
+
+    public E getLast(){
+        return queue[queue.length - 1];
+    }
+
     @Override
     public void enqueue(E element) {
         if (!isFull()) {
