@@ -34,6 +34,15 @@ public class Main {
          * the head of the queue is in the middle of the array backing the queue.
          */
         //Put your codes here
+	/*
+        public void enqueue(E element) {
+        if (!isFull()) {
+            int insertion_index = (head_index + size) % queue.length;
+            this.queue[insertion_index] = element;
+            size++;
+        }
+       }
+         */
     }
 
     public static void print(Object o){
