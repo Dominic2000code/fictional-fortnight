@@ -14,20 +14,24 @@ public class ArrayBasedQueue<E> implements Queue<E> {
         this.queue = (E[]) new Object[queue_size];
     }
 
-    public E getFirst(){
+    public E getFirst() throws Exception{
+        checkQueue();
         return queue[0];
     }
-
-    public E getLast(){
+    public E getLast() throws Exception{
+        checkQueue();
         return queue[queue.length - 1];
     }
 
     @Override
-    public void enqueue(E element) {
+    public void enqueue(E element) throws Exception{
         if (!isFull()) {
             int insertion_index = (head_index + size) % queue.length;
             this.queue[insertion_index] = element;
             size++;
+        }
+        else{
+            throw new Exception("The queue is full");
         }
     }
 
@@ -68,8 +72,8 @@ public class ArrayBasedQueue<E> implements Queue<E> {
     public String toString() {
         StringBuilder bldr = new StringBuilder();
         if (!isEmpty()) {
-            for (int i = 0; i < queue.length; i++) {
-                bldr.append(queue[i]);
+            for (int i = 0; i < queue.length;i++ ) {
+                bldr.append(queue[(head_index + i) % queue.length]);
                 if (i + 1 != queue.length)
                     bldr.append(", ");
             }
