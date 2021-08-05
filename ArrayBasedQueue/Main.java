@@ -1,44 +1,36 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         int queue_size = 10;
         ArrayBasedQueue<Integer> queue = new ArrayBasedQueue<>(queue_size);
         print(queue);
 
-//        // populate queue with random integers between 0 and 10 (inclusive)
-//        int[] added_elements = new int[12];
-//        for(int i = 0; i < 12; i++){
-//            int element = (int) (Math.random() * 11);
-//            added_elements[i] = element;
-//            queue.enqueue(element);
-//        }
-//        print("Order of addition "+Arrays.toString(added_elements));
-        queue.enqueue(5);
-        queue.enqueue(7);
-        queue.enqueue(8);
-        queue.enqueue(9);
-        queue.enqueue(4);
-        queue.enqueue(3);
-        queue.enqueue(1);
-        queue.enqueue(12);
-        queue.enqueue(6);
-        queue.enqueue(11);
+        // populate queue with random integers between 0 and 10 (inclusive)
+        int[] added_elements = new int[10];
+        for(int i = 0; i < 10; i++){
+            int element = (int) (Math.random() * 11);
+            added_elements[i] = element;
+            queue.enqueue(element);
+        }
+        print("Order of addition "+ Arrays.toString(added_elements));
         print(queue);
-        print("Head: " +queue.getFirst());
-        print("Tail: " +queue.getLast());
-        queue.dequeue();
-        queue.dequeue();
+        print("Head: " +queue.first());
+        print("Tail: " +queue.last());
+        System.out.println("Item removed: " +queue.dequeue());
+        System.out.println("Item removed: " +queue.dequeue());
         queue.enqueue(90);
         queue.enqueue(100);
         print(queue);
 
-//        // repetitive removal
-//        int[] removed = new int[queue.getSize()];
-//        for(int i = 0; i < queue_size; i++){
-//            int element = queue.dequeue();
-//            removed[i] = element;
-//        }
-//        print("Order of removal "+Arrays.toString(removed));
-//        print(queue);
+        // repetitive removal
+        int[] removed = new int[queue.getSize()];
+        for(int i = 0; i < queue_size; i++){
+            int element = queue.dequeue();
+            removed[i] = element;
+        }
+        print("Order of removal "+Arrays.toString(removed));
+        print(queue);
 
         /*
          * Print the elements of the queue in the right order

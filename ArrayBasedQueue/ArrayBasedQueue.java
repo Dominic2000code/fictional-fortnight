@@ -14,15 +14,6 @@ public class ArrayBasedQueue<E> implements Queue<E> {
         this.queue = (E[]) new Object[queue_size];
     }
 
-    public E getFirst() throws Exception{
-        checkQueue();
-        return queue[0];
-    }
-    public E getLast() throws Exception{
-        checkQueue();
-        return queue[queue.length - 1];
-    }
-
     @Override
     public void enqueue(E element) throws Exception{
         if (!isFull()) {
@@ -53,6 +44,11 @@ public class ArrayBasedQueue<E> implements Queue<E> {
     public E first() throws Exception {
         checkQueue();
         return queue[head_index];
+    }
+
+    public E last() throws Exception{
+        checkQueue();
+        return queue[queue.length - 1];
     }
 
     @Override

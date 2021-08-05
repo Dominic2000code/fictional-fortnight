@@ -21,6 +21,8 @@ public interface Queue<E> {
      */
     E first() throws Exception;
 
+    E last() throws Exception;
+
     /**
      * Returns the number of elements stored
      * @return
