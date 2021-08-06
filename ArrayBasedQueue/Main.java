@@ -7,14 +7,18 @@ public class Main {
         print(queue);
 
         // populate queue with random integers between 0 and 10 (inclusive)
-        int[] added_elements = new int[10];
-        for(int i = 0; i < 10; i++){
-            int element = (int) (Math.random() * 11);
-            added_elements[i] = element;
-            queue.enqueue(element);
+        int[] added_elements = new int[12];
+        try {
+            for (int i = 0; i < 12; i++) {
+                int element = (int) (Math.random() * 11);
+                added_elements[i] = element;
+                queue.enqueue(element);
+            }
+        } catch (Exception e) {
+            print("Order of addition " + Arrays.toString(added_elements));
+            System.out.println(e.getMessage());
+            print(queue);
         }
-        print("Order of addition "+ Arrays.toString(added_elements));
-        print(queue);
         print("Head: " +queue.first());
         print("Tail: " +queue.last());
         System.out.println("Item removed: " +queue.dequeue());
